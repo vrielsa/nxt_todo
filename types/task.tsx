@@ -1,4 +1,4 @@
-import {z, ZodIssue} from "zod";
+import {string, z, ZodInvalidTypeIssue, ZodIssue} from "zod";
 import {DateTime} from "luxon";
 
 export const TaskSchema = z.object({
@@ -12,9 +12,10 @@ export const TaskSchema = z.object({
             throw new z.ZodError([
                 {
                     code: z.ZodIssueCode.invalid_type,
-                    expected: "ISO 8601 date string",
+                    expected: "date",
                     message: "Invalid date format",
                     path: ["dueDate"],
+                    received: typeof value,
                 } as ZodIssue
             ])
         }

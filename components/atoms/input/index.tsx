@@ -2,7 +2,8 @@ import {InputHTMLAttributes, ReactNode} from "react"
 import classNames from "classnames"
 import {UseFormReturn} from "react-hook-form";
 
-interface IInputProps extends InputHTMLAttributes<HTMLInputElement>, Partial<UseFormReturn> {
+interface IInputProps extends InputHTMLAttributes<HTMLInputElement> {
+    register: UseFormReturn<any>['register']
 }
 
 function Input({className, register, ...props}: IInputProps): ReactNode {

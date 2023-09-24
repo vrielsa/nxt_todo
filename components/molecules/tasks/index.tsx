@@ -7,11 +7,11 @@ interface ITasksProps {
 
 function Tasks({tasks}: ITasksProps) {
     return (
-        <ul className="grid grid-cols-4 gap-6">
+        <ul className="grid grid-cols-1 lg:grid-cols-4 gap-6">
             {tasks.length === 0 && (
                 <li>
                     <div className="w-full p-2 text-black">
-                        No tasks. Let's get started!
+                        No tasks. Let&apos;s get started!
                     </div>
                 </li>
             )}
